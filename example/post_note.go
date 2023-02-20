@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -27,10 +26,10 @@ func main() {
 	fmt.Println(string(b))
 
 	// publish the event
-	url := "wss://relay.damus.io"
-	relay, _ := nostr.RelayConnect(context.Background(), url)
-	pk, _ := nostr.GetPublicKey(sk)
-	fmt.Println("published to ", url, relay.Publish(context.Background(), cev.Event), "from", pk)
+	// url := "wss://relay.damus.io"
+	// relay, _ := nostr.RelayConnect(context.Background(), url)
+	// pk, _ := nostr.GetPublicKey(sk)
+	// fmt.Println("published to ", url, relay.Publish(context.Background(), cev.Event), "from", pk)
 
 	// Check the result on web clients, e.g.) https://snort.social
 	// or CLI tools like the below with https://github.com/blakejakopovic/nostreq and https://github.com/blakejakopovic/nostcat
