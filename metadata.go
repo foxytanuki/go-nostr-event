@@ -2,7 +2,6 @@ package nostrevent
 
 import (
 	"encoding/json"
-	"strconv"
 
 	"github.com/nbd-wtf/go-nostr"
 )
@@ -21,6 +20,5 @@ type MetadataContent struct {
 
 func NewMetadata(content MetadataContent) CustomEvent {
 	b, _ := json.Marshal(content)
-	s := strconv.Quote(string(b))
-	return NewEvent(nostr.KindSetMetadata, nostr.Tags{}, s)
+	return NewEvent(nostr.KindSetMetadata, nostr.Tags{}, string(b))
 }
