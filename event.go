@@ -10,13 +10,13 @@ type WrappedEvent struct {
 	nostr.Event
 }
 
-func (wev *WrappedEvent) SignPk(sk string) error {
+func (wevt *WrappedEvent) SignPk(sk string) error {
 	pub, err := nostr.GetPublicKey(sk)
 	if err != nil {
 		return err
 	}
-	wev.PubKey = pub
-	if err := wev.Sign(sk); err != nil {
+	wevt.PubKey = pub
+	if err := wevt.Sign(sk); err != nil {
 		return err
 	}
 
@@ -30,9 +30,9 @@ func NewEvent(kind int, tags nostr.Tags, content string) WrappedEvent {
 		Tags:      tags,
 		Content:   content,
 	}
-	wev := WrappedEvent{
+	wevt := WrappedEvent{
 		Event: ev,
 	}
 
-	return wev
+	return wevt
 }
