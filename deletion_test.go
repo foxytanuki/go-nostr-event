@@ -15,8 +15,8 @@ func TestNewDeletion(t *testing.T) {
 			"d17414186fa1ea0d738b07bf96d12901a55e2c9ddc2008ebd43ab6a1eebdde18",
 		},
 	}
-	cev := NewDeletion(ids)
-	if !reflect.DeepEqual(cev.Tags, expected) {
-		t.Errorf("expected: %v, got: %v", expected, cev.Tags)
+	wevt := NewDeletion(ids)
+	if !reflect.DeepEqual(wevt.Tags, expected) {
+		t.Errorf("expected: %v, got: %v", expected, wevt.Tags)
 	}
 }

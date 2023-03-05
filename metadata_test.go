@@ -13,6 +13,6 @@ func TestNewMetadata(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	ev := NewMetadata(content)
-	fmt.Println(ev.Content)
+	evt := NewMetadata(content)
+	fmt.Println(evt.Content)
 }

@@ -28,21 +28,21 @@ func main() {
 }
 
 func generateNoteEvent(sk string) nostr.Event {
-	wev := nostrevent.NewNote("hi")
-	if err := wev.SignPk(sk); err != nil {
+	wevt := nostrevent.NewNote("hi")
+	if err := wevt.SignPk(sk); err != nil {
 		log.Fatal(err)
 	}
 
-	wev.SignPk(sk)
+	wevt.SignPk(sk)
 
 	// print the event
-	b, err := json.MarshalIndent(wev, "", "\t")
+	b, err := json.MarshalIndent(wevt, "", "\t")
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println(string(b))
 
-	return wev.Event
+	return wevt.Event
 }
 
 func generateMetadataEvent(sk string) nostr.Event {
@@ -55,13 +55,13 @@ func generateMetadataEvent(sk string) nostr.Event {
 	if err != nil {
 		log.Fatal(err)
 	}
-	wev := nostrevent.NewMetadata(content)
-	wev.SignPk(sk)
+	wevt := nostrevent.NewMetadata(content)
+	wevt.SignPk(sk)
 	// print the event
-	b, err := json.MarshalIndent(wev, "", "\t")
+	b, err := json.MarshalIndent(wevt, "", "\t")
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println(string(b))
-	return wev.Event
+	return wevt.Event
 }

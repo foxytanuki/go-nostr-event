@@ -24,14 +24,14 @@ func (wevt *WrappedEvent) SignPk(sk string) error {
 }
 
 func NewEvent(kind int, tags nostr.Tags, content string) WrappedEvent {
-	ev := nostr.Event{
+	evt := nostr.Event{
 		Kind:      kind,
 		CreatedAt: time.Now(),
 		Tags:      tags,
 		Content:   content,
 	}
 	wevt := WrappedEvent{
-		Event: ev,
+		Event: evt,
 	}
 
 	return wevt

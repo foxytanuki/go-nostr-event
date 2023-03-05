@@ -66,7 +66,7 @@ func TestNewContactList(t *testing.T) {
 		},
 	}
 
-	ev := NewContactList(c, r)
-	b, _ := json.Marshal(ev)
+	wevt := NewContactList(c, r)
+	b, _ := json.Marshal(wevt)
 	fmt.Println(string(b))
 }
