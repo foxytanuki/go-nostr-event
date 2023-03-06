@@ -18,7 +18,7 @@ type MetadataContent struct {
 	NIP05Valid  bool   `json:"nip05valid"`
 }
 
-func NewMetadata(content MetadataContent) CustomEvent {
+func NewMetadata(content MetadataContent) WrappedEvent {
 	b, _ := json.Marshal(content)
 	return NewEvent(nostr.KindSetMetadata, nostr.Tags{}, string(b))
 }

@@ -32,6 +32,6 @@ func formatContacts(contacts []string) nostr.Tags {
 	return tt
 }
 
-func NewContactList(contacts []string, relays []Relay) CustomEvent {
+func NewContactList(contacts []string, relays []Relay) WrappedEvent {
 	return NewEvent(nostr.KindContactList, formatContacts(contacts), formatRelays(relays))
 }
