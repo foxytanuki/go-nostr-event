@@ -9,10 +9,6 @@ func TestNewMetadata(t *testing.T) {
 	c := MetadataContent{
 		Name: "john",
 	}
-	content, err := PrepareMetadataContent(c)
-	if err != nil {
-		t.Error(err)
-	}
-	evt := NewMetadata(content)
-	fmt.Println(evt.Content)
+	ev := NewMetadata(c)
+	fmt.Println(ev.Content)
 }

@@ -51,11 +51,7 @@ func generateMetadataEvent(sk string) nostr.Event {
 		Name:        "example_post_note",
 		DisplayName: "example",
 	}
-	content, err := nostrevent.PrepareMetadataContent(c)
-	if err != nil {
-		log.Fatal(err)
-	}
-	wevt := nostrevent.NewMetadata(content)
+	wevt := nostrevent.NewMetadata(c)
 	wevt.SignPk(sk)
 	// print the event
 	b, err := json.MarshalIndent(wevt, "", "\t")
